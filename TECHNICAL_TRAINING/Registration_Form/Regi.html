@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+
+    <form>
+        <div class="form-group">
+            <label for="name">Name: </label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password: </label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+      
+        <div class="form-group">
+        <label for="email">Email: </label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+        <label for="ph_no">Phone Number: </label>
+        <input type="ph_no" id="ph_no" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-group">
+        <label>Sex: </label>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        </div>
+
+        <div class="form-group">
+        <label>Date of Birth: </label>
+        <select id="day">
+            <option>Day</option>
+
+            <script>
+                for (let i = 1; i <= 31; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+
+                }
+            </script>
+        </select>
+
+        <select id="month">
+            <option>Month</option>
+            <option>January</option><option>February</option>
+            <option>March</option><option>April</option>
+            <option>May</option><option>June</option>
+            <option>July</option><option>August</option>
+            <option>September</option><option>October</option>
+            <option>November</option><option>December</option>
+        </select>
+
+        <select id="year">
+            <option>Year</option>
+
+            <script>
+                for (let i = 1990; i <= 2025; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+
+                }
+            </script>
+        </select>
+        </div>
+
+        <div class="form-group">
+        <label>Languages Known: </label>
+        <input type="checkbox" name="English">English
+        <input type="checkbox" name="Telugu">Telugu
+        <input type="checkbox" name="Hindi">Hindi
+        <input type="checkbox" name="Tamil">Tamil
+        </div>
+        
+        <div class="form-group">
+        <label for="address">Address: </label><br>
+        <textarea id="address" rows="4" cols="40"></textarea>
+        </div>
+        <div class="form-group">
+        <input type="submit" value="Register">
+        </div>
+    </form>
+</body>
+</html>

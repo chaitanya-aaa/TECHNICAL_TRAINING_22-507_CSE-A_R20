@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <button onclick="showTable()">Click</button>
+
+    <script>
+        function showTable() {
+        let n = prompt("Enter a number: ");
+        n = parseInt(n);
+        if (isNaN(n)) {
+            alert('Enter a valid number!!!');
+            return;
+        }
+        let result = "";
+        for (let i = 1; i <= 10; i++) {
+            result += `${n} x ${i} = ${n * i}\n`;
+        }
+
+        alert(result);
+        }
+    </script>
+</body>
+</html>

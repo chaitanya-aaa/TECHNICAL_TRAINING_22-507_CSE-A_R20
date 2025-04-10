@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let fname = document.getElementById("fname").value;
+            let lname = document.getElementById("lname").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let password = document.getElementById("password").value;
+            let address = document.getElementById("address").value;
+
+            let emailRegex = /^[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+            let nameRegex = /^[A-Za-z]+$/;
+
+            if (!nameRegex.test(fname) || fname.length < 6) {
+                alert("First Name should be alphabets only and minimum 6 characters.");
+                return false;
+            }
+            if (lname.trim() === "") {
+                alert("Last Name should not be empty.");
+                return false;
+            }
+            if (password.length < 6) {
+                alert("Password should be at least 6 characters.");
+                return false;
+            }
+            if (!emailRegex.test(email)) {
+                alert("Invalid email format.");
+                return false;
+            }
+            if (phone.length !== 10 || isNaN(phone)) {
+                alert("Mobile number must be 10 digits.");
+                return false;
+            }
+            if (address.trim() === "") {
+                alert("Address should not be empty.");
+                return false;
+            }
+
+            alert("Registration Successful!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" placeholder="Enter your First Name" required>
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" placeholder="Enter your Last Name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Enter your Email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Mobile Number:</label>
+            <input type="text" id="phone" placeholder="Enter your mobile number" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label><br>
+            <textarea id="address" rows="4" cols="30" placeholder="Enter your address"></textarea>
+        </div>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
