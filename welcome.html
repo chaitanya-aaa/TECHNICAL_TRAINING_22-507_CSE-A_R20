@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
+
+        .animated-text {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: moveScaleFade 4s ease-in-out infinite;
+        }
+
+        @keyframes moveScaleFade {
+            0% {
+                transform: translateY(-50px) scale(1);
+                opacity: 0;
+            }
+            25% {
+                transform: translateY(0) scale(1.1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-text">Welcome to our Online Book Store</div>
+    <p>Books related to Computer Science, Programming, Data Structures, and more... Use the menu on the left to navigate through our site.</p>
+</body>
+</html>

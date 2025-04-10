@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Catalogue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Book Catalogue</h2>
+
+    <!-- Department Dropdown -->
+    <label for="department">Select Department:</label>
+    <select id="department" onchange="filterBooks()">
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="AIML">AIML</option>
+    </select>
+
+    <br><br>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Cover</th>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Price</th>
+            <th>Cart</th>
+        </tr>
+
+        <!-- CSE Books -->
+        <tbody id="CSE">
+            <tr>
+                <td><img src="XML_BIBLE.jpg" width="80" height="100"></td>
+                <td>XML 1.1 Bible</td>
+                <td>Elliotte Rusty Harold</td>
+                <td>John Wiley & Sons</td>
+                <td>$39.99</td>
+                <td><button onclick="alert('Added to Cart...')">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td><img src="AI.jpg" width="80" height="100"></td>
+                <td>Artificial Intelligence: A Modern Approach (4th Edition)</td>
+                <td>Stuart Russell & Peter Norvig</td>
+                <td>Pearson</td>
+                <td>$8.53</td>
+                <td><button onclick="alert('Added to Cart...')">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td><img src="DSA.jpg" width="80" height="100"></td>
+                <td>Data Structures Using C</td>
+                <td>Reema Thareja</td>
+                <td>Oxford University Press</td>
+                <td>$40-$65</td>
+                <td><button onclick="alert('Added to Cart...')">Add to Cart</button></td>
+            </tr>
+        </tbody>
+
+        <!-- ECE Books -->
+        <tbody id="ECE" style="display:none">
+            <tr>
+                <td><img src="CS_ECE.jpg" width="80" height="100"></td>
+                <td>Communication Systems</td>
+                <td>Simon Haykin</td>
+                <td>Wiley</td>
+                <td>$50</td>
+                <td><button onclick="alert('Added to Cart...')">Add to Cart</button></td>
+            </tr>
+        </tbody>
+
+        <!-- AIML Books -->
+        <tbody id="AIML" style="display:none">
+            <tr>
+                <td><img src="ML_CSM.jpg" width="80" height="100"></td>
+                <td>Hands-On Machine Learning with Scikit-Learn and TensorFlow</td>
+                <td>Aurélien Géron</td>
+                <td>O'Reilly Media</td>
+                <td>$45</td>
+                <td><button onclick="alert('Added to Cart...')">Add to Cart</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function filterBooks() {
+            const selected = document.getElementById("department").value;
+            const departments = ["CSE", "ECE", "AIML"];
+            departments.forEach(dep => {
+                document.getElementById(dep).style.display = dep === selected ? "" : "none";
+            });
+        }
+    </script>
+</body>
+
+</html>
